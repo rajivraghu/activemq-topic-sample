@@ -51,8 +51,6 @@
 		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
 		<property name="connectionFactory" ref="topicListenConnectionFactory" />
 		<property name="destination" ref="keykiTopic" />
-        <!---这里是设置接收客户端的ID，在持久化时，但这个客户端不在线时，
-        消息就存在数据库里，知道被这个ID的客户端消费掉-->
         <property name="clientId" value="clientId_002"/>
         <property name="messageListener" ref="messageSubscriber2" />
         <property name="subscriptionDurable" value="true"/>
